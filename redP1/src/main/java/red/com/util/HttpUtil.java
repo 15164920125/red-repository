@@ -129,7 +129,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * 集中报案-接口调用
+	 * -接口调用
 	 * 
 	 * @param url
 	 *            接口地址
@@ -201,6 +201,7 @@ public class HttpUtil {
 			}
 		}
 	}
+	
 
 	/**
 	 * 获取前端传来的参数,打印日志
