@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: redGetway
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ASUS
+Specification-Title: redGetway
+Implementation-Vendor-Id: redService
+Build-Jdk: 1.8.0_102
+Specification-Version: 0.0
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/redGetway
+Created-By: Maven Integration for Eclipse
+

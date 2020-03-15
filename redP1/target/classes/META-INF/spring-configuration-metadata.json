@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "rest",
+      "type": "red.com.commons.ConfigRestUrlServer",
+      "sourceType": "red.com.commons.ConfigRestUrlServer"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rest.protocol",
+      "type": "red.com.commons.Protocol",
+      "sourceType": "red.com.commons.ConfigRestUrlServer"
+    },
+    {
+      "name": "rest.server",
+      "type": "red.com.commons.Server",
+      "sourceType": "red.com.commons.ConfigRestUrlServer"
+    }
+  ],
+  "hints": []
+}

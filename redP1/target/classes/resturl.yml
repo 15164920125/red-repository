@@ -1,0 +1,59 @@
+rest:
+  protocol:
+    name: http://10.156.128.57:30201/32000000/p03-16/
+  server:
+    echo: localhost
+    #理算微服务--->理算模块
+    compensate: compensatebiz-server/compensateApi
+    #理算微服务--->预赔模块
+    compensatebizServer: compensatebiz-server/prePayApi
+    #查勘微服务--->查勘环节（查勘，理赔日志，赔案名称，客户案号，工作进展备忘）模块
+    checkbizServer: checkbiz-server/checkApi
+    #查勘微服务--->查高级审核环节
+    check: checkbiz-server/checkApproveApi
+    #定损微服务--->损余回收模块
+    deflossbizServer: deflossbiz-server/reclaimApi
+    #定损微服务--->旧人伤模块
+    deflossbizServerBodily: deflossbiz-server/bodilyApi
+    #立案微服务--->立案模块
+    claim: claimbiz-server/claimApi
+    #辅助微服务--->辅助模块
+    auxiliaryServer: auxiliary-server/auxiliaryConfigApi
+    #理算微服务--->核赔模块
+    undwrt: compensatebiz-server/undwrtApi
+    #立案微服务-->第三方机构
+    claimServerAgency: claimbiz-server/agencyApi
+    #立案微服务-->担保信息
+    claimServerAssure: claimbiz-server/assureApi
+    #立案微服务-->结案模块
+    claimServerEndCase: claimbiz-server/endCaseApi
+    #立案微服务-->诉讼模块
+    #claimbizServerLawsuit: claimbiz-server/lawsuitApi
+    #理算微服务--->领款人
+    compensatePayPerson: compensatebiz-server/payPersonApi
+    #周边交互微服务-->保单信息模块
+    peripheralbizServer : peripheralbiz-server/policyInfoApi/
+    #周边交互微服务--->客户等级模型
+    peripheralbiz: peripheralbiz-server/customerManageMidPlatApi
+    #工作流微服务--->工作流模块
+    bpmServer: bpm-server/bpmApi
+    #理算微服务--->预赔模块
+    prepay: compensatebiz-server/prePayApi 
+    #理算微服务--->医疗审核模块
+    medicalAudit: compensatebiz-server/medicalVertifyApi
+    #理算微服务--->追偿模块
+    recovery: compensatebiz-server/recoveryApi
+    #周边交互微服务--->规则模块
+    ilog: peripheralbiz-server/ilogApi
+    #立案微服务--->关键环节管控
+    claimServercontrol: claimbiz-server/controlApi
+    #立案微服务--->诉讼
+    claimbizServer: claimbiz-server/lawsuitApi    
+    #立案微服务--->资料收集
+    dataCollectServer: claimbiz-server/collectApi 
+    
+     #理算微服务--->残值处理
+    compensateSalvage : compensatebiz-server/salvageApi
+    #立案微服务-->
+    claimServerClaimant : claimbiz-server/claimantApi
+    
