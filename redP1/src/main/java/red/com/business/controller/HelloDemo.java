@@ -3,6 +3,8 @@ package red.com.business.controller;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +26,7 @@ import red.com.business.service.HelloDemoService;
 @RestController
 @RequestMapping("/hello")
 @DefaultProperties(defaultFallback="global_FallbackMethod")
+@RefreshScope//支持nacos动态刷新功能
 public class HelloDemo {
 	
 	@Autowired
@@ -31,13 +34,17 @@ public class HelloDemo {
 	@Autowired
 	private FeignHelloDemoService feignHelloDemoService;
 	
+//	@Value("${config.info}")
+//	private String nacosConfigCenter_configInfo;
+	
 
-	@RequestMapping("ces")
-	public Map<String,Object> helloInfo(){
-		Map<String,Object> map= new HashMap<>();
-		String json = "";
-		helloDemoService.queryPrpLclaimFeeHisList(json);
-		return map;
+	@RequestMapping("cs")
+	public Object helloInfo(){
+//		System.out.println("读取nacos配置中心的配置="+nacosConfigCenter_configInfo);
+//		helloDemoService.queryPrpLclaimFeeHisList(json);
+		Map<String,Object> map = new HashMap<>();
+//		return nacosConfigCenter_configInfo;
+		return "哈哈哈";
 	}
 	
 	/**

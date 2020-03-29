@@ -91,7 +91,7 @@ public final class MyGlobalLogFilter implements GlobalFilter, Ordered {
 		//验签JWT
 		try{
 			JwtAccount parseJwt = JsonWebTokenUtil.parseJwt(jwtToken, JsonWebTokenUtil.SECRET_KEY);
-			log.info("验签成功="+parseJwt+",刷新jwt-token!");
+			log.info("验签成功,刷新jwt-token="+parseJwt);
 			String rejwt = JsonWebTokenUtil.issueJWT(IdUtil.simpleUUID(), parseJwt.getAppId(),
 					parseJwt.getIssuer(), parseJwt.getRoles(), parseJwt.getPerms()
 					, SignatureAlgorithm.HS512);
@@ -99,7 +99,7 @@ public final class MyGlobalLogFilter implements GlobalFilter, Ordered {
 			response.getHeaders().add("jwt-token", rejwt);
 			response.getHeaders().add("Content-Type", "text/plain;charset=UTF-8");
 		}catch(Exception e){
-			log.info("验签失败！");
+			log.info("账户已过期或鉴权失败！");
             ServerHttpResponse response = exchange.getResponse();
             JSONObject message = new JSONObject();
             message.put("status", 500);
